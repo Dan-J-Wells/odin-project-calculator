@@ -1,0 +1,185 @@
+/* Resets */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: black;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-size: 1em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Layout Styles */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.calculator-container {
+  height: 78vh;
+  width: 52vh;
+  display: grid;
+  grid-template: 
+    [disp-left] "display display display display" 1fr [disp-right]
+    [disp-left] "control control control operator" 1fr [disp-right]
+    [disp-left] "number number number operator" 1fr [disp-right]
+    [disp-left] "number number number operator" 1fr [disp-right]
+    [disp-left] "number number number operator" 1fr [disp-right]
+    [disp-left] "number number number operator" 1fr [disp-right]
+    / 1fr 1fr 1fr 1fr;
+}
+
+.section-container {
+  display: grid;
+  font-family: 'Roboto', sans-serif;
+}
+
+#display-container {
+  grid-area: display;
+}
+
+#control-container {
+  grid-area: control;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#number-container {
+  grid-area: number;
+  grid-template:
+    [num-left] "seven eight nine" 1fr [num-right]
+    [num-left] "four five six" 1fr [num-right]
+    [num-left] "one two three" 1fr [num-right]
+    [num-left] "zero zero decimal" 1fr [num-right]
+    / 1fr 1fr 1fr;
+}
+
+#operator-container {
+  grid-area: operator;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.section-container > button {
+  border: none;
+  display: block;
+  margin: 0;
+  justify-self: center;
+  align-self: center;
+  width: 11vh;
+  height: 11vh;
+  border-radius: 5.5vh;
+  text-align: center;
+}
+
+.display {
+  margin: 1vh 4.5vh;
+}
+
+.display-text {
+  display: block;
+  line-height: 11vh;
+  color: white;
+  font-size: 7.5vh;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  margin: 0;
+}
+
+/* Numbers Grid Area */
+#decimal {
+  grid-area: decimal;
+}
+
+#zero {
+  grid-area: zero;
+  width: 24vh;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+/* Buttons */
+.control {
+  background-color: rgb(179, 179, 179);
+  display: grid;
+  color: black;
+  justify-self: center;
+  align-self: center;
+  font-size: 4.5vh;
+  padding-bottom: 0.5vh;
+}
+
+.number {
+  background-color: rgb(48, 48, 48);
+  display: grid;
+  color: white;
+  justify-self: center;
+  align-self: center;
+  font-size: 5vh;
+}
+
+.operator {
+  background-color: rgb(255, 169, 10);
+  display: grid;
+  color: white;
+  justify-self: center;
+  align-self: center;
+  font-size: 5.5vh;
+  padding-bottom: 1vh;
+}
